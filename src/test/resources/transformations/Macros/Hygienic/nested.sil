@@ -1,0 +1,18 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+define macro {
+    var x: Bool := true
+    macro2(x)
+}
+
+define macro2(y) {
+    var x: Bool := false
+    assert(y || x) 
+}
+
+method main()
+{
+    macro
+    macro
+}

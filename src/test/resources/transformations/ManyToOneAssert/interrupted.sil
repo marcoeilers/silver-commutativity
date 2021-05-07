@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method main()
+{
+    var b: Bool := false
+    assert(true)
+    assert(true)
+    inhale b == true
+    assert(b)
+    assert(b)
+    assert(true)
+}

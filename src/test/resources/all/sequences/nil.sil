@@ -1,0 +1,10 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method test01() {
+  var bs1: Seq[Bool] := Seq[Bool]()
+  var bs2: Seq[Bool] := Seq[Bool]()
+
+  assert bs1 == bs2
+  assert |bs1| == 0
+}

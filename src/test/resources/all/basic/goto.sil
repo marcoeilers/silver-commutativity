@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+
+method t1(n: Int) returns (r: Int)
+    requires n > 0
+    //:: ExpectedOutput(postcondition.violated:assertion.false)
+    ensures r > 0
+{
+    goto lbl
+    r := n
+label lbl
+}

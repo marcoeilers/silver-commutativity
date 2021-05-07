@@ -1,0 +1,17 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+predicate pred(){
+	true
+}
+
+function f(ref : Ref) : Int
+    //:: ExpectedOutput(typechecker.error)
+	ensures 1 == unfolding pred() in ref
+
+method m(ref : Ref)
+    requires acc(pred())
+{
+    //:: ExpectedOutput(typechecker.error)
+    assert ref == unfolding pred() in 1
+}

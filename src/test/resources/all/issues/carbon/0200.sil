@@ -1,0 +1,22 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+function SCIONPath_get_hof(self: Ref): Ref
+  requires acc(outer(self), wildcard)
+{
+  (
+  let idx_0 ==
+  (unfolding acc(outer(self), wildcard) in self.whatever)
+  in
+  (unbox(box(false)) ? null : null))
+}
+
+predicate outer(r: Ref) {acc(r.whatever)}
+
+function isBool(r: Ref): Bool
+function box(b: Bool): Ref
+    ensures isBool(result)
+function unbox(r: Ref): Bool
+    requires isBool(r)
+
+field whatever: Int

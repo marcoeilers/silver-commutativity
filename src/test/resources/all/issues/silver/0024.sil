@@ -1,0 +1,14 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field f : Int
+
+method test1()
+  //:: ExpectedOutput(typechecker.error)
+  requires f > 0
+{}
+
+method test2(this: Ref)
+  //:: ExpectedOutput(typechecker.error)
+  requires acc(this.f) && f > 0
+{}

@@ -1,0 +1,18 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field x: Int
+
+predicate P(this: Ref) {
+  acc(this.x)
+}
+
+method Testsuccess5(this: Ref)
+  requires this != null
+  requires acc(P(this), write)
+  ensures [acc(P(this), write) && (unfolding acc(P(this), write) in this.x == old((unfolding acc(P(this), write) in this.x))), true]
+{
+  exhale acc(P(this), write) && (unfolding acc(P(this), write) in this.x == old((unfolding acc(P(this), write) in this.x)))
+  //:: ExpectedOutput(exhale.failed:assertion.false)
+  exhale false
+}

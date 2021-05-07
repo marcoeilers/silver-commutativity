@@ -1,0 +1,9 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+  function foo(this: Ref): Ref
+  { this }
+  method m(this: Ref, b: Bool)
+  {
+    var c: Ref := (b ? null : foo(this))
+  }

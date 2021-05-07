@@ -1,0 +1,11 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field value: Int;
+field next: Ref;
+
+function foo(count: Int): Int
+
+method test(list: Ref) {
+  inhale (forall i: Int :: 2 == old(foo(i))) --* true
+}

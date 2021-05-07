@@ -1,0 +1,16 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field f: Int
+
+method foo() {
+  var s: Set[Ref]
+  var a: Ref
+  var b: Ref
+
+  inhale s == Set(a, b) && a!=null && b!=null
+  inhale forall x: Ref :: x in s ==> acc(x.f)
+
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  assert a.f == b.f
+}

@@ -1,0 +1,21 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+//:: ExpectedOutput(parser.error)
+define macro {
+    assert(true)
+    macro2
+}
+
+define macro2 {
+    assert(true)
+    macro
+}
+
+method main()
+{
+    var b: Bool := true
+    assert(true)
+    macro
+}
+

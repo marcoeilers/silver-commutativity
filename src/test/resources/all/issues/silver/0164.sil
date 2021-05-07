@@ -1,0 +1,12 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field f : Ref;
+
+method ff ()
+{
+    var r : Ref;
+    var b : Bool;
+    //:: ExpectedOutput(consistency.error)
+    b := (4 == 4 ? acc(r.f, write) : 4 == 4)
+}

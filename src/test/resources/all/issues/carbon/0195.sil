@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field v: Int
+
+predicate vperm (r: Ref) {acc(r.v)}
+
+function func(r: Ref): Bool
+    requires vperm(r)
+    ensures result
+{
+    let v1 == (unfolding vperm(r) in r.v) in (unfolding vperm(r) in v1 == r.v)
+}

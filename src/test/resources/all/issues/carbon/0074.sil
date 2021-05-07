@@ -1,0 +1,14 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method test()
+{
+  var i: Int
+  i := 0
+  while (i < 5)
+  {
+    var x: Int
+    x := 0
+    i := i + 1
+  }
+}

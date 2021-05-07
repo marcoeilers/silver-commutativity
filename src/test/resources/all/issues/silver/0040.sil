@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method Main() {
+  var og: Ref
+  og := new()
+
+  var ghost0: Int
+
+  //:: ExpectedOutput(typechecker.error)
+  var count: Int := og.ghost0
+  /* The type checker should now report "expected field" */
+}

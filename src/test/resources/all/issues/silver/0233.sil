@@ -1,0 +1,18 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method test()
+    ensures (
+        true
+        --*
+        let tmp2 == (
+            true
+            ) in (
+            tmp2
+            --*
+            true
+        )
+    )
+{
+    assume false
+}

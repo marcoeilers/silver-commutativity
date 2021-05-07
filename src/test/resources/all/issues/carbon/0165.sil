@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+predicate p(x: Ref, idx: Int)
+
+
+
+method test() 
+{
+    
+  inhale forall r: Ref :: acc(p(r,0), perm(p(r,0)))  
+} 
+//@TIMING:{"total":0.244,"timings":[7,355,355]}

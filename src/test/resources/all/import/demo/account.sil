@@ -1,0 +1,18 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+/****************************************
+ * Account
+ ****************************************/
+
+field _balance: Int
+
+predicate account(this: Ref)
+
+function balance(this: Ref): Int
+  requires acc(account(this))
+
+method deposit(this: Ref, n: Int)
+  requires 0 < n && acc(account(this))
+  ensures  acc(account(this))
+  ensures  balance(this) == old(balance(this)) + n

@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+//:: ExpectedOutput(parser.error)
+define macro 1 + macro2
+
+method main()
+{
+    define macro2 1 + macro
+    
+    assert(macro == 5)
+}
+

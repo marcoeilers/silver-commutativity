@@ -1,0 +1,12 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field val: Int
+
+function foo(): Bool
+  ensures forall n:Ref :: { n.val } true
+
+method test(x: Ref) {
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  assert false
+}

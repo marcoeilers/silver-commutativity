@@ -1,0 +1,20 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method main() returns ()
+{
+   var x:Bool := true
+   var y:Bool := true
+   var r:Bool
+   r := fourAnd(x, y, true, true)
+   assert(r)
+   r := fourAnd(false, false, false, false)
+   assert(!r)
+   r := fourAnd(false, false, false, false)
+   assert(!r)
+}
+
+function fourAnd(a: Bool, b: Bool, c: Bool, d:Bool): Bool
+{
+    a && b && c && d
+}

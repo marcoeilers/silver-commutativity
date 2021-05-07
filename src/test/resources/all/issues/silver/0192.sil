@@ -1,0 +1,15 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method Foo() returns (x: Int, y: Int) 
+{
+    x := 0
+    y := 1
+}
+
+method Bar()
+{
+    var a: Int
+    //:: ExpectedOutput(consistency.error)
+    a, a := Foo()
+}

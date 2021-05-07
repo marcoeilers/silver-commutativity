@@ -1,0 +1,14 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+/****************************************
+ * List
+ ****************************************/
+
+field data: Int
+field next: Ref
+
+predicate list(this: Ref)
+
+function length(this: Ref): Int
+  requires acc(list(this))

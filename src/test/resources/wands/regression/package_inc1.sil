@@ -1,0 +1,25 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field f: Ref
+field g: Ref
+field h: Ref
+
+method test01(x: Ref) {
+  package (true) --* true {
+      package (false --* true)
+  }
+
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  assert false
+}
+
+method test02(x:Ref) {
+  package (false) --* true {
+      apply false --* true
+  }
+
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  assert false
+}
+

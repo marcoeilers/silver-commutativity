@@ -1,0 +1,29 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field f : Ref
+
+method test(x: Int)
+{
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  assert x>3
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>4
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>5
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>6
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>7
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>8
+  //:: ExpectedOutput(assert.failed:assertion.false)
+  //:: MissingOutput(assert.failed:assertion.false, /Silicon/issue/34/)
+  assert x>9
+}
+

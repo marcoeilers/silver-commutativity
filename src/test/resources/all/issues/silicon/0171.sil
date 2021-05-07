@@ -1,0 +1,11 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field val: Int
+
+domain IArray {
+  function length(a: IArray): Int
+}
+
+function f_lcp(a: IArray, x: Int, y: Int): Int
+  ensures forall k: Int :: k in [x..x+1) ==> y in [0..length(a))

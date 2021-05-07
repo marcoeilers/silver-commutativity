@@ -1,0 +1,20 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+field v: Bool
+
+method test1(x: Ref) {
+  package acc(x.v) && acc(x.v) --* false // Fails, but should not
+}
+
+method test1fix(x: Ref) {
+  package acc(x.v) && acc(x.v) --* acc(x.v) && acc(x.v) && false
+}
+
+method test2(x: Ref, y: Ref) {
+  package acc(x.v) && acc(y.v) --* x != y // Fails, but should not
+}
+
+method test2fix(x: Ref, y: Ref) {
+  package acc(x.v) && acc(y.v) --* acc(x.v) && acc(y.v) && x != y
+}

@@ -1,0 +1,15 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+//:: IgnoreFile(/Carbon/issue/243/)
+field f: Int
+field g: Int
+
+method m(x:Ref, y: Ref) {
+    inhale acc(x.f)
+    inhale acc(x.f) --* acc(x.g)
+
+    assert perm(acc(x.f) --* acc(x.g)) == write
+    apply acc(x.f) --* acc(x.g)
+    assert perm (acc(x.f) --* acc(x.g)) == none
+}

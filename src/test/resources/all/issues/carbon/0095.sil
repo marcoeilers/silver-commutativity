@@ -1,0 +1,13 @@
+// Any copyright is dedicated to the Public Domain.
+// http://creativecommons.org/publicdomain/zero/1.0/
+
+method length_iter()
+{
+    while (true)
+    {
+        if (true) {
+            var tmp4: Int
+            tmp4 := 1
+        } 
+    }
+}
